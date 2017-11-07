@@ -1,0 +1,24 @@
+Eugene Choi
+Lab 4: Sudoku Solver
+
+The user uses this program by using the executable ./sudoku and adding a textfile containing an unsolved sudoku puzzle as an argument. The program then displays the unsolved puzzle and the solved puzzle. 
+
+The program uses a class called Board which implements a struct called Cell. The struct has an integer variable "value" which stores the value of the cell and an array of integers which keeps track of possibilities of values the cell can be. Board has a 2D array of Cell which represents each cell on a sudoku puzzle. It includes member functions such as:
+The constructor, copy constructor, and destructor
+The isEmpty function which takes in two integers to determine if a particular cell is empty
+The insert function which inserts a particular integer into a particular cell
+The getVal function which returns the value of a cell
+The getPos function which displays the pos array
+The isFull function which determines if the board is full by making sure none of the cells are empty (using isEmpty)
+The display function which displays the Board's cells' values
+The checkPos function which determines the possibility array of a cell
+The single function which checks if there is a cell that only has one possible value. A temporary integer variable keeps track of how many possibilities the cell has. If it only has one possibility, it goes back and looks for that value to assign to the cell.
+The singletonRow function which checks if only one cell within the row can be a certain value. It has a temporary integer array that keeps track of how many cells have the possibility of a value. If there is only one cell that has the possibility of a value, then it goes back and looks for that value to assign.
+The singletonCol function which checks if only one cell within the column can be a certain value. It works the same as singletonRow.
+
+In the main.cpp file, the program first takes the argument and stored the contents into a Board object called sudoku. Then, it displays the unsolved board. Next, it has a variable that stores the value of sudoku.isFull() and uses the possibility function which calls the Board object's checkPos function to fill up the pos arrays. While the board is not full, the program calls single, singletonRow, and singletonCol functions. In between, the pos arrays are re-evaluated to avoid overlaps of values in cells. The board is checked again if it is full. After the program kicks out of the while loop, the solved board is displayed. 
+
+The program was checked by adding chunks of code then displaying arbitrary messages to see where the program was stuck or which loops it was going through. After the basic structure of the Board class and main.cpp was built, the results of the solution were compared to the actual solution of each sudoku puzzle (sudoku, medium, cc1). 
+
+At first, I planned on using vectors that stored each possible value for each cell, which did not work well. It was complicated to find ways to compare the values in each array. Then, I implemented arrays instead which stored 1 or 0 for each value to indicate possibility (for example, if a cell had a possibility of being 5, pos[5] = 1). 
+
