@@ -1,0 +1,38 @@
+body{
+	background-color:white;
+}
+
+#div_btn_f, #div_btn_c, #div_btn_u{
+	display:inline;
+	text-align:center;
+}
+
+#div_star{
+	background-color: #A6BFF9;
+	text-align: center;
+}
+
+#rev{
+	display:inline-block;
+	text-align:left;
+	max-width: 400px;
+	padding: 20px;
+}
+
+#biz{
+	display:inline-block;
+	text-align:left;
+	vertical-align: top;
+	padding: 20px;
+	padding-left: 50px;
+}
+
+#div_biz_form{
+	padding: 10px;
+	background-color: #A6BFF9;
+}
+
+#r_form{
+	padding: 20px;
+	background-color: #A6BFF9;
+}
